@@ -55,7 +55,7 @@ export default function CoreCourses() {
           textAlign={"center"}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
-          color='black'
+          color='white'
           mb={'10'}
            
         >
@@ -63,7 +63,7 @@ export default function CoreCourses() {
           <Text fontSize={{ base: "2xl", sm: "2xl", md: "1xl" }}>(Common in All Specializations)</Text>
         </Heading>
         <Text
-          color={"black"}
+          color={"white"}
           textAlign={"center"}
           fontSize={{ base: "1xl", sm: "2xl", md: "1xl" }}
         >
