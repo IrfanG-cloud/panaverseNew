@@ -39,10 +39,11 @@ const Feature = ({ title, text }: FeatureProps) => {
       <Button
         maxW={"20"}
         as={"a"}
-        bg={"black"}
+        bg={"red.600"}
         textAlign={"center"}
         rounded={"full"}
         color={"white"}
+        alignContent={'end'}
         href={"https://www.panaverse.co/"}
         _hover={{
           bg: "white",
@@ -57,7 +58,7 @@ const Feature = ({ title, text }: FeatureProps) => {
 
 export default function Courses() {
   return (
-    <Box p={4}>
+    <Box p={4} h={'4xl'}>
       <Box m={"20"}>
         <Heading
           fontWeight={800}

@@ -21,7 +21,7 @@ export default function Register() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("red.500", "red.600")}
+      bg={useColorModeValue("black", "black")}
     >
       <Stack spacing={8} mx={"auto"} h={"lg"} w={"lg"} py={2} px={12}>
         <Stack align={"left"}>
@@ -29,7 +29,7 @@ export default function Register() {
             Register
           </Heading>
           <Text fontSize={"lg"} color={"white"}>
-            Please sign in below.
+            Please fill below.
           </Text>
         </Stack>
         <Box
@@ -39,27 +39,25 @@ export default function Register() {
           p={8}
         >
           <Stack spacing={4}>
+          <FormControl id="name">
+              <FormLabel>
+                Name
+              </FormLabel>
+              <Input type="email" />
+            </FormControl>
             <FormControl id="email">
               <FormLabel>
-                Email<Link color="red">*</Link>
+                Email
               </FormLabel>
               <Input type="email" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>
-                Password<Link color="red">*</Link>
+                Password
               </FormLabel>
               <Input type="password" />
             </FormControl>
             <Stack spacing={10}>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                align={"start"}
-                justify={"space-between"}
-              >
-                <Checkbox>Remember me</Checkbox>
-                <Link color={"red"}>Forgot password?</Link>
-              </Stack>
               <Button
                 bg={"red.600"}
                 color={"white"}

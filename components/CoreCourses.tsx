@@ -24,15 +24,15 @@ const Feature = ({ title, text }: FeatureProps) => {
         bg: "red.600",
       }}
     >
-      <Text
+      <Heading
         fontWeight={600}
         color={"black"}
         mb={"5"}
-        fontSize={{ base: "2xl", sm: "2xl" }}
+        fontSize={{ base: "2xl", md: "4xl" }}
       >
         {title}{" "}
-      </Text>
-      <Text color={"black"} mb={"20"} fontSize={{ base: "1sm", sm: "1sm" }}>
+      </Heading>
+      <Text color={"black"} mb={"20"} fontSize={{ base: "2xl", sm: "2xl" }}>
         {text}
       </Text>
     </Stack>
@@ -43,23 +43,27 @@ export default function CoreCourses() {
   return (
     <Box 
         p={4} 
-        h={'2xl'}
+        h={'3xl'}
         backgroundImage={
-        'url(https://img.freepik.com/free-photo/front-view-young-female-playing-vr-dark-visual-fantasy-play-game_179666-42839.jpg?w=1060&t=st=1675408036~exp=1675408636~hmac=81146bca50d6281a7d258ffc1d861a949242f423ad66a8a3b3a8d2ad43388efc)'
+          
+        'url(https://img.freepik.com/premium-photo/metaverse-city-with-connection-3d-render_84831-456.jpg?w=1380)' 
+        
       }>
-      <Box m={"20"}>
+      <Box m={"20"}  >
         <Heading
           fontWeight={800}
           textAlign={"center"}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
-          color='white'
+          color='black'
           mb={'10'}
+           
         >
-          Core Courses (Common in All Specializations)
+          Core Courses <br/>
+          <Text fontSize={{ base: "2xl", sm: "2xl", md: "1xl" }}>(Common in All Specializations)</Text>
         </Heading>
         <Text
-          color={"white"}
+          color={"black"}
           textAlign={"center"}
           fontSize={{ base: "1xl", sm: "2xl", md: "1xl" }}
         >

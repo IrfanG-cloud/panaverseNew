@@ -61,7 +61,7 @@ import {
                 color={"white"}
                 bg={"red.600"}
                 rounded={'full'}
-                href="/register"
+                href="/"
                 _hover={{
                 bg: "black",
                 }}>

@@ -57,6 +57,7 @@ export default function Footer() {
       <Container
         as={Stack}
         maxW={"1xl"}
+        bg={'gray.300'}
         py={4}
         direction={{ base: "column", md: "row" }}
         spacing={4}
@@ -64,7 +65,7 @@ export default function Footer() {
         align={{ base: "center", md: "center" }}
       >
         <Logo />
-        <Text>© 2022 Chakra Templates. All rights reserved</Text>
+        <Text fontSize={"lg"} >© 2023 Panaveasre DAO. All rights reserved</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton
             label={"Facebook"}
@@ -79,6 +80,7 @@ export default function Footer() {
             <FaTwitter />
           </SocialButton>
           <SocialButton
+
             label={"YouTube"}
             href={"https://www.youtube.com/@panaverse/streams "}
           >
