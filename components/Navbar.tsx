@@ -31,9 +31,7 @@ export default function Navbar() {
       <Flex
         bg={useColorModeValue("white", "black.800")}
         color={useColorModeValue("black", "white")}
-        minH={"60px"}
-        py={{ base: 2}}
-        px={{ base: 40 }}
+        minH={"80px"}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -53,28 +51,33 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex 
-            flex={{ base: 1 }} 
-            justify={{ base: "center", md: "start" }}
-            py={{ base: 1}}
-            px={{ base: 10 }}>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          py={{ base: 1 }}
+          px={{ base: 10 }}
+        >
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("black", "white")}
           >
-            <Button 
+            <Button
               as={"a"}
-              bg={'none'}
+              bg={"none"}
               _hover={{
                 bg: "none",
               }}
-              href="/">
-                <Image src={"../public/red-p-logo-text_dao_croped.png"} />
+              href="/"
+            >
+              <Image
+                src="../red-p-logo-text_dao_croped.png"
+                w='30' h='20'
+              />
             </Button>
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10} pt={1}>
+          <Flex display={{ base: "none", md: "flex" }} ml={10} pt={2}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -106,7 +109,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"white"}
             bg={"red.600"}
-            rounded={'full'}
+            rounded={"full"}
             href="/register"
             _hover={{
               bg: "black",
@@ -130,7 +133,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "black");
 
   return (
-    <Stack direction={"row"} spacing={4} px={{ base: 40 }}>
+    <Stack direction={"row"} spacing={4} px={{ base: 20 }}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -138,16 +141,14 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"2xl"}
-                fontWeight={800}
+                fontSize={"1xl"}
+                fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
-                  color: 'red.600',
-                  borderBottom:'1'
-                  
+                  color: "red.600",
+                  borderBottom: "1",
                 }}
-  
               >
                 {navItem.label}
               </Link>
@@ -233,20 +234,15 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
-     
         as={Link}
         href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
-
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray", "gray")}
-        >
+        <Text fontWeight={600} color={useColorModeValue("gray", "gray")}>
           {label}
         </Text>
         {children && (
@@ -268,9 +264,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
-        >
-
-        </Stack>
+        ></Stack>
       </Collapse>
     </Stack>
   );
@@ -286,11 +280,11 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "How it Work",
-    href:'#',
+    href: "#",
   },
   {
     label: "Apply",
-    href:'#',
+    href: "#",
   },
   {
     label: "Available Programs",

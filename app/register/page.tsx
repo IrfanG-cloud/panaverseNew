@@ -23,7 +23,7 @@ export default function Register() {
       justify={"center"}
       bg={useColorModeValue("red.500", "red.600")}
     >
-      <Stack spacing={8} mx={"auto"} h={"lg"} w={"lg"} py={6} px={12}>
+      <Stack spacing={8} mx={"auto"} h={"lg"} w={"lg"} py={2} px={12}>
         <Stack align={"left"}>
           <Heading fontSize={"6xl"} color={"white"}>
             Register

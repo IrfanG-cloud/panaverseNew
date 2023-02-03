@@ -40,11 +40,13 @@ import {
             </Text>
             <Stack direction={'row'} >
               <Button
+              as={"a"}
                 bg={'white'}
                 mt='50'
                textAlign={'center'}
                 rounded={'full'}
                 color={'black'}
+                href={'https://www.piaic.org/'}
                 _hover={{ 
                 bg: 'white'}}>
                 APPLY
