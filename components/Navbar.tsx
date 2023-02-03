@@ -7,6 +7,7 @@ import {
   Stack,
   Collapse,
   Icon,
+  Image,
   Link,
   Popover,
   PopoverTrigger,
@@ -29,9 +30,9 @@ export default function Navbar() {
     <Box>
       <Flex
         bg={useColorModeValue("white", "black.800")}
-        color={useColorModeValue("gray.600", "white")}
+        color={useColorModeValue("black", "white")}
         minH={"60px"}
-        py={{ base: 4 }}
+        py={{ base: 2}}
         px={{ base: 40 }}
         borderBottom={1}
         borderStyle={"solid"}
@@ -52,20 +53,28 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex 
+            flex={{ base: 1 }} 
+            justify={{ base: "center", md: "start" }}
+            py={{ base: 1}}
+            px={{ base: 10 }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("black", "white")}
           >
             <Button 
-              as={"a"} 
+              as={"a"}
+              bg={'none'}
+              _hover={{
+                bg: "none",
+              }}
               href="/">
-                LOGO
+                <Image src={"../public/red-p-logo-text_dao_croped.png"} />
             </Button>
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} ml={10} pt={1}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -74,17 +83,18 @@ export default function Navbar() {
           flex={{ base: 2, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
-          spacing={6}
+          spacing={3}
         >
           <Button
             as={"a"}
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"lg"}
+            bg={"none"}
             fontWeight={600}
-            color={"red"}
-            href="/signup"
+            color={"black"}
+            href="/signin"
             _hover={{
-              bg: "red",
+              color: "red.600",
             }}
           >
             Sign In
@@ -95,14 +105,14 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"black"}
+            bg={"red.600"}
             rounded={'full'}
-            href="/signup"
+            href="/register"
             _hover={{
-              bg: "red",
+              bg: "black",
             }}
           >
-            Sign Up
+            Register
           </Button>
         </Stack>
       </Flex>
@@ -115,12 +125,12 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkColor = useColorModeValue("black", "black");
   const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const popoverContentBgColor = useColorModeValue("white", "black");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} px={{ base: 40 }}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -128,13 +138,16 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
+                fontSize={"2xl"}
+                fontWeight={800}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor,
+                  color: 'red.600',
+                  borderBottom:'1'
+                  
                 }}
+  
               >
                 {navItem.label}
               </Link>
@@ -220,18 +233,19 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
-        py={2}
+     
         as={Link}
         href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
+
         }}
       >
         <Text
           fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
+          color={useColorModeValue("gray", "gray")}
         >
           {label}
         </Text>
@@ -255,12 +269,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
         >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
+
         </Stack>
       </Collapse>
     </Stack>
@@ -276,41 +285,23 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "How it Work",
+    href:'#',
   },
   {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
+    label: "Apply",
+    href:'#',
   },
   {
-    label: "Learn Design",
+    label: "Available Programs",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "About ",
+    href: "#",
+  },
+  {
+    label: "WIT",
     href: "#",
   },
 ];
