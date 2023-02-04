@@ -59,7 +59,9 @@ export default function Register() {
             </FormControl>
             <Stack spacing={10}>
               <Button
+              as={'a'}
                 bg={"red.600"}
+                href={'/'}
                 color={"white"}
                 _hover={{
                   bg: "red.400",

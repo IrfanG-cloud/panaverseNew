@@ -18,8 +18,10 @@ interface FeatureProps {
 const Feature = ({ title, text }: FeatureProps) => {
   return (
     <Stack
+    as={'a'}
       bg={"white"}
       p={"10"}
+      href={'/'}
       _hover={{
         bg: "red.600",
       }}
