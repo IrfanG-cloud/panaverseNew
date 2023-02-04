@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import StudyProgram from "@/components/StudyProgram";
+
 
 
 export default function RootLayout({
@@ -19,10 +17,9 @@ export default function RootLayout({
 
         <body>
           <ChakraProvider>
-            <Navbar />
+            
             {children}
-            <StudyProgram />
-            <Footer />
+            
           </ChakraProvider>
         </body>
       </html>

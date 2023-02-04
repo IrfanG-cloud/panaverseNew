@@ -33,7 +33,7 @@ export default function Navbar() {
         color={useColorModeValue("black", "white")}
         minH={"60px"}
         py={{ base: 2}}
-        px={{ base: 40 }}
+        px={{ base: 1 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -56,7 +56,7 @@ export default function Navbar() {
         <Flex 
             flex={{ base: 1 }} 
             justify={{ base: "center", md: "start" }}
-            py={{ base: 1}}
+            py={{ base: 4}}
             px={{ base: 10 }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
@@ -70,7 +70,7 @@ export default function Navbar() {
                 bg: "none",
               }}
               href="/">
-                <Image src={"../public/red-p-logo-text_dao_croped.png"} />
+                <Image src="../red-p-logo-text_dao_croped.png" w='30' h='20'/>;
             </Button>
           </Text>
 
